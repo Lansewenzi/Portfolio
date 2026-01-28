@@ -31,7 +31,7 @@
 
 * **预览**：
 
-    ![](music\screenshot.png)<br>
+    ![](music/screenshot.png)<br>
     👉 **[查看详细文档与源码](./music/README.md)**
 
 ---
@@ -46,7 +46,7 @@
 
 * **预览**：
 
-    ![](video\screenshot.png)<br>
+    ![](video/screenshot.png)<br>
     👉 **[查看详细文档与源码](./video/README.md)**
 
 ---
