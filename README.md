@@ -45,6 +45,8 @@
 
 ---
 
+
+
 ## 🚀 快速开始 (Getting Started)
 
 本仓库所有项目均为 **纯静态页面**，无需安装 Node.js 环境。
@@ -52,20 +54,23 @@
 1.  **克隆仓库**
     
     ```bash
-    git clone [https://github.com/Lansewenzi/Portfolio.git](https://github.com/Lansewenzi/Portfolio.git)
+    git clone https://github.com/Lansewenzi/Portfolio.git
     ```
     
 2.  **运行项目**
     * **音乐播放器**：进入 `music` 文件夹，打开 `index.html`。
     * **视频解析**：进入 `video` 文件夹，打开 `index.html`。
 
-    > 💡 **推荐**：使用 VS Code 的 "Live Server" 插件运行，以获得最佳体验。
+
+
 
 ## ⚠️ 免责声明 (Disclaimer)
 
 * 本项目仅供 **技术研究与学习** 使用。
 * 项目中的音乐/视频数据均来源于 **第三方网络接口**，本项目不存储任何版权内容。
 * 请勿将本项目用于商业用途，请尊重版权，支持正版。
+
+
 
 ## 📄 License
 

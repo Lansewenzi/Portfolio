@@ -47,7 +47,7 @@
 项目核心配置位于 `script.js` 顶部：
 
 ```javascript
-const API_BASE_URL = '[https://music-dl.sayqz.com/api/](https://music-dl.sayqz.com/api/)
+const API_BASE_URL = 'https://music-dl.sayqz.com/api/';  // 音乐 API 接口地址
 ```
 
 **注意**：本项目依赖后端 API 进行音乐解析。如果默认接口失效，请自行搭建或替换为兼容的音乐解析 API。

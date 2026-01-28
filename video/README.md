@@ -33,10 +33,8 @@
 本项目无需安装 Node.js 或任何构建工具，下载即用。
 
 ### 方法 1：直接运行
-1. 克隆本项目到本地：
-   ```bash
-   git clone [https://github.com/Lansewenzi/Portfolio.git](https://github.com/Lansewenzi/Portfolio.git)
-
+1. 克隆本项目到本地。
+   
 2. 双击打开 `index.html` 即可运行。
 
 ### 方法 2：部署到服务器
@@ -53,7 +51,7 @@
 
 ```html
 <select class="url-c url-text" id="jk">
-    <option value="[https://example.com/api/?url=](https://example.com/api/?url=)">线路1</option>
+    <option value="https://example.com/api/?url=">线路1</option>
 </select>
 ```
 
