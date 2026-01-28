@@ -29,6 +29,12 @@
 
 
 
+## 🖥️ 界面预览
+
+![](.\screenshot.png)
+
+
+
 ## 🚀 快速开始 (Getting Started)
 
 本项目采用 **Zero-Build** 架构，无需安装 Node.js 或运行构建命令。

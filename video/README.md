@@ -24,7 +24,7 @@
 
 ## 🖥️ 界面预览
 
-> *`screenshot.png`*
+![](.\screenshot.png)
 
 
 
