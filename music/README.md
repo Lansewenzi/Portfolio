@@ -37,15 +37,8 @@
 1. 克隆或下载本项目到本地。
 2. 双击打开 `index.html` 即可运行。
 
-### 方法 2：本地服务 (推荐)
-为了获得最佳的资源加载体验（避免某些浏览器的跨域限制），建议使用简单的静态服务器：
-
-```bash
-# 如果你安装了 Python
-python -m http.server 8000
-
-# 或者使用 VS Code 的 "Live Server" 插件
-```
+### 方法 2：部署到服务器 (推荐)
+只需将所有文件上传至您的 Nginx/Apache 网站根目录。
 
 
 
@@ -93,4 +86,4 @@ const API_BASE_URL = '[https://music-dl.sayqz.com/api/](https://music-dl.sayqz.c
 
 ## 📄 License
 
-MIT License
+[MIT License](https://www.google.com/search?q=LICENSE)
