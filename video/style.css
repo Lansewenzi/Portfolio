@@ -1,0 +1,495 @@
+/* =================================================================
+= 核心 CSS：全局样式
+=================================================================
+*/
+
+:root {
+    --tb--main: #007bff;
+    --tb--base: #333;
+    --tb--dark: #202935;
+    --tb--white: #fff;
+    --tb--bdbg: #f4f4f4;
+    --tb--tint: #fbfbfb;
+    --tb--line: #f3f3f3;
+    --tb--gray: #999
+}
+
+.darking:root {
+    --tb--base: #ccc;
+    --tb--dark: #14181b;
+    --tb--white: #14181b;
+    --tb--bdbg: #0c0f14;
+    --tb--tint: #1d2025;
+    --tb--line: #1d2025;
+    --tb--gray: #555
+}
+
+.container::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box
+}
+
+html {
+    -webkit-text-size-adjust: 100%
+}
+
+a {
+    color: var(--tb--base);
+    text-decoration: none;
+    outline: 0
+}
+
+a:hover {
+    color: var(--tb--main);
+    text-decoration: none
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none
+}
+
+video,
+embed,
+iframe,
+img {
+    display: block;
+    max-width: 100%
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0
+}
+
+p {
+    margin-top: 0
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text-transform: none
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button
+}
+
+body {
+    position: relative;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft Yahei", MiSans, "HarmonyOS Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    color: var(--tb--base);
+    background-color: var(--tb--bdbg);
+    overflow-x: hidden;
+    left: 0;
+    transition: left .3s ease-in-out
+}
+
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    color: var(--tb--base);
+    background-color: #eee;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 8px 24px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 6px;
+    text-decoration: none !important;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
+}
+
+.btn:hover {
+    color: var(--tb--base);
+    background-color: #e2e2e2
+}
+
+.btn:focus {
+    outline: 0
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer
+}
+
+
+.site-header {
+    padding: 15px 0; /* 15px 上下内边距, 0 左右 */
+    background-color: var(--tb--white);
+    border-bottom: 1px solid var(--tb--line);
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    /* * 核心修改：
+     * 将 'space-between' (两端对齐) 改为 'center' (居中)
+    */
+    justify-content: center; /* 核心：logo 居中 */
+    align-items: center;
+    /* 确保在 container-fluid 内部时也能正常工作 */
+    margin: 0 auto;
+    max-width: 1240px;
+    /* 增加左右内边距，防止内容贴边 */
+    padding: 0 10px; 
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-image {
+    height: 32px; /* 您可以根据logo大小调整这个高度 */
+    width: auto;
+    margin-right: 0px;
+    border-radius: 4px; /* 可选：给 logo 加个小圆角 */
+}
+
+.brand {
+    font-size: 14px;
+    float: left;
+    line-height: 15px;
+    color: #bbb;
+    padding-left: 10px;
+    position: relative;
+    top: 1px;
+    border-left: 2px solid #eaeaea;
+    margin-left: 10px;
+    overflow: hidden;
+    height: 30px
+}
+
+body {
+    background-color: var(--tb--white);
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0px;
+    max-width: 1240px;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.smartideo {
+    z-index: 0;
+    text-align: center;
+    background: #000;
+    line-height: 0;
+    text-indent: 0;
+}
+
+/* * ================= 
+ * 播放器优化核心
+ * =================
+*/
+
+.smartideo .player {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    
+    /* 优化：设置16:9的宽高比 */
+    aspect-ratio: 16 / 9;
+    height: auto; 
+
+    /* 优化：限制最大高度，防止在超宽桌面上过大 */
+    max-height: 70vh; 
+}
+
+.smartideo embed,
+.smartideo iframe {
+    padding: 0;
+    margin: 0;
+    
+    /* 优化：使 iframe 填满父容器 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* 替代已弃用的 frameborder="no" */
+}
+
+
+/* logo平台 */
+.logo-box {
+    text-align: center;
+}
+
+.title-tit {
+    font-family: "微软雅黑";
+    padding: 20px 0 10px;
+}
+
+.title-tit h3 {
+    display: inline-block;
+    border-left: 5px solid var(--tb--main);
+    padding-left: 10px;
+    font-size: 16px;
+    line-height: 1rem;
+    font-weight: bold;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.logo-lie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--tb--line);
+    background: #fbfbfb;
+}
+
+.logo-lie img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* * 优化：移动端优先 (Mobile-First)
+ * .col-xs-4 (3列) 现在是默认样式，不需要媒体查询
+*/
+.col-xs-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+
+/* 输入框表单 */
+.url-text {
+    height: 40px;
+    color: var(--tb--base);
+    border: 1px solid var(--tb--tint);
+    background-color: var(--tb--bdbg);
+    border-right: 0px;
+    flex: 1;
+    padding-left: 10px;
+    min-width: 0;
+}
+
+.url-box {
+    padding: 10px 5px;
+    border-top: 1px solid var(--tb--line);
+    border-left: 1px solid var(--tb--line);
+    border-right: 1px solid var(--tb--line);
+    background: var(--tb--tint);
+}
+
+.url-box .input-group-addon {
+    padding: 0;
+    border: none;
+}
+
+input#url:focus {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.url-text:focus {
+    border-color: var(--tb--main);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.btn-play {
+    height: 40px;
+    padding: 0 40px;
+    background: var(--tb--main);
+    border: none;
+    color: #fff;
+    transition: all 0.3s;
+    border-radius: 0px;
+}
+
+.btn-play:active {
+    color: #0093ff;
+    background: -webkit-linear-gradient(left, #ffb199, #fa709a);
+    background: -o-linear-gradient(left, #ffb199, #fa709a);
+    background: -moz-linear-gradient(left, #ffb199, #fa7a);
+    background: linear-gradient(left, #ffb199, #fa709a);
+}
+
+.btn-play:hover {
+    color: #fff;
+    background-color: var(--tb--main);
+}
+
+.btn-play:focus {
+    outline-style: none;
+    color: #FFFFFF;
+}
+
+.url-c {
+    padding: 0 15px;
+}
+
+/* (已移除 .error-text 规则) */
+
+.tit-gg {
+    padding-left: 10px;
+    line-height: 35px;
+    vertical-align: middle;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    border-bottom: 1px solid var(--tb--line);
+    border-left: 1px solid var(--tb--line);
+    border-right: 1px solid var(--tb--line);
+    background: var(--tb--tint);
+}
+
+.input-group {
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+}
+
+/* 页脚 */
+.simple-footer {
+    padding: 20px;
+    background-color: var(--tb--dark);
+    color: var(--tb--gray);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.simple-footer p {
+    margin: 0;
+}
+
+
+/* * 手机小屏 ( < 600px )
+ * 主要调整字体大小和页头
+*/
+@media (max-width: 600px) {
+    .title-tit h3 {
+        font-size: 14px;
+    }
+
+    .logo-image {
+        margin-right: 0; /* 标语隐藏了，logo 也不需要右边距了 */
+    }
+
+    .site-header {
+        padding: 10px 0; /* 手机上页头高度小一点 */
+        margin-bottom: 0px;
+    }
+}
+
+/* * 手机大屏 ( < 767px )
+ * 主要调整表单高度
+*/
+@media (max-width: 767px) {
+
+    img.logo-image {
+        height: 24px;
+    }
+    .url-text {
+        height: 35px;
+    }
+
+    .btn-play {
+        height: 35px;
+        padding: 0 10px;
+    }
+
+    .url-c {
+        padding: 0px;
+    }
+
+    .video-box {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+/* * 桌面 ( 992px 及以上 )
+ * Logo 网格变为 6 列
+*/
+@media (min-width: 992px) {
+    .col-lg-2 {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+@media (min-width: 1024px) {
+   .header-container {
+        justify-content: flex-start; 
+    }
+}
+
+@media(max-width: 1023px) {
+    .brand {
+        display:none
+    }
+}
